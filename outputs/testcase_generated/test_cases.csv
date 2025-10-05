@@ -1,8 +1,9 @@
 TestID,Title,Steps,Expected,Priority
-TC-001,Successful login with valid credentials,Navigate to login page | Enter valid email | Enter valid password | Click login button,User is redirected to dashboard,High
-TC-002,Login with invalid email,Navigate to login page | Enter invalid email | Enter valid password | Click login button,Error message for invalid credentials is displayed,Medium
-TC-003,Login with invalid password,Navigate to login page | Enter valid email | Enter invalid password | Click login button,Error message for invalid credentials is displayed,Medium
-TC-004,Account lock after 3 failed login attempts,Navigate to login page | Enter valid email | Enter invalid password | Click login button | Repeat invalid password entry two more times,Account is locked for 10 minutes,High
-TC-005,Reset password via Forgot Password link,Navigate to login page | Click on Forgot Password link | Enter registered email | Submit reset request,Password reset email is sent to the user,Medium
-TC-006,Error message for locked account,Navigate to login page | Enter valid email | Enter invalid password | Click login button | Repeat invalid password entry two more times | Wait for 10 minutes | Attempt to log in with valid credentials,Error message indicating account is locked is displayed,High
-TC-007,Successful login after account unlock,Navigate to login page | Enter valid email | Enter valid password | Click login button,User is redirected to dashboard,High
+TC-001,Search for available flights,Open flight booking system | Enter source | Enter destination | Select date | Click search,List of available flights is displayed,High
+TC-002,Display flight details,Search for flights | View flight list,Each flight shows price and seat classes,High
+TC-003,Select a seat during booking,Search for flights | Select a flight | Choose a seat | Click continue,Seat selection is confirmed,Medium
+TC-004,Process payment with credit card,Select a flight | Choose a seat | Enter payment details | Click pay,Payment is processed successfully,High
+TC-005,Handle payment failure,Select a flight | Choose a seat | Enter invalid payment details | Click pay,Error message is displayed; option to retry,High
+TC-006,Send booking confirmation email,Select a flight | Choose a seat | Enter valid payment details | Click pay,Booking confirmation email is sent,Medium
+TC-007,Check for seat availability,Search for flights | Select a flight | Choose a seat | Click continue | Select the same seat again,System shows seat is already booked,Medium
+TC-008,Verify payment options,Select a flight | Choose a seat | View payment options,Credit card; debit card; and digital wallet options are available,Low

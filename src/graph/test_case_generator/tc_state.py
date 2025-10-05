@@ -9,7 +9,7 @@ through each node of the graph.
 """
 
 from typing import List, Dict, TypedDict, Optional
-
+#class StateGrpah(Generic[StateT, ContextT, InputT, OutputT]):
 
 class TestCaseState(TypedDict, total=False): 
     # Total=False means all state variables are optional, ie the as the flow progresses the variables are filled one by one
@@ -18,7 +18,9 @@ class TestCaseState(TypedDict, total=False):
     State for the Test Case Generator pipeline.
     Fields here are carried across all nodes in the graph.
     """
-
+    # Optional: path to a requirement file (CLI input)
+    requirement_path: str
+    
     # Input: requirements text 
     requirements: str
 

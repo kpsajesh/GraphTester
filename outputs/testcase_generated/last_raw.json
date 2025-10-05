@@ -1,51 +1,58 @@
 [
   {
     "id": "TC-001",
-    "title": "Successful login with valid credentials",
-    "steps": ["Navigate to login page", "Enter valid email", "Enter valid password", "Click login button"],
-    "expected": "User is redirected to dashboard",
+    "title": "Search for available flights",
+    "steps": ["Open flight booking system", "Enter source", "Enter destination", "Select date", "Click search"],
+    "expected": "List of available flights is displayed",
     "priority": "High"
   },
   {
     "id": "TC-002",
-    "title": "Login with invalid email",
-    "steps": ["Navigate to login page", "Enter invalid email", "Enter valid password", "Click login button"],
-    "expected": "Error message for invalid credentials is displayed",
-    "priority": "Medium"
+    "title": "Display flight details",
+    "steps": ["Search for flights", "View flight list"],
+    "expected": "Each flight shows price and seat classes",
+    "priority": "High"
   },
   {
     "id": "TC-003",
-    "title": "Login with invalid password",
-    "steps": ["Navigate to login page", "Enter valid email", "Enter invalid password", "Click login button"],
-    "expected": "Error message for invalid credentials is displayed",
+    "title": "Select a seat during booking",
+    "steps": ["Search for flights", "Select a flight", "Choose a seat", "Click continue"],
+    "expected": "Seat selection is confirmed",
     "priority": "Medium"
   },
   {
     "id": "TC-004",
-    "title": "Account lock after 3 failed login attempts",
-    "steps": ["Navigate to login page", "Enter valid email", "Enter invalid password", "Click login button", "Repeat invalid password entry two more times"],
-    "expected": "Account is locked for 10 minutes",
+    "title": "Process payment with credit card",
+    "steps": ["Select a flight", "Choose a seat", "Enter payment details", "Click pay"],
+    "expected": "Payment is processed successfully",
     "priority": "High"
   },
   {
     "id": "TC-005",
-    "title": "Reset password via Forgot Password link",
-    "steps": ["Navigate to login page", "Click on Forgot Password link", "Enter registered email", "Submit reset request"],
-    "expected": "Password reset email is sent to the user",
-    "priority": "Medium"
+    "title": "Handle payment failure",
+    "steps": ["Select a flight", "Choose a seat", "Enter invalid payment details", "Click pay"],
+    "expected": "Error message is displayed, option to retry",
+    "priority": "High"
   },
   {
     "id": "TC-006",
-    "title": "Error message for locked account",
-    "steps": ["Navigate to login page", "Enter valid email", "Enter invalid password", "Click login button", "Repeat invalid password entry two more times", "Wait for 10 minutes", "Attempt to log in with valid credentials"],
-    "expected": "Error message indicating account is locked is displayed",
-    "priority": "High"
+    "title": "Send booking confirmation email",
+    "steps": ["Select a flight", "Choose a seat", "Enter valid payment details", "Click pay"],
+    "expected": "Booking confirmation email is sent",
+    "priority": "Medium"
   },
   {
     "id": "TC-007",
-    "title": "Successful login after account unlock",
-    "steps": ["Navigate to login page", "Enter valid email", "Enter valid password", "Click login button"],
-    "expected": "User is redirected to dashboard",
-    "priority": "High"
+    "title": "Check for seat availability",
+    "steps": ["Search for flights", "Select a flight", "Choose a seat", "Click continue", "Select the same seat again"],
+    "expected": "System shows seat is already booked",
+    "priority": "Medium"
+  },
+  {
+    "id": "TC-008",
+    "title": "Verify payment options",
+    "steps": ["Select a flight", "Choose a seat", "View payment options"],
+    "expected": "Credit card, debit card, and digital wallet options are available",
+    "priority": "Low"
   }
 ]

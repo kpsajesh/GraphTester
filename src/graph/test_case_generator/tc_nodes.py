@@ -1,4 +1,5 @@
 # This file is to define the individual node functions for testcase generator pipeline
+# Creating 3 nodes - read requirements, generate tests with llm, push to testrail
 
 """
 Test Case Generator (LangGraph)
@@ -44,14 +45,20 @@ PROMPTS_DIR = ROOT / "src" / "core" / "prompts"
 SYSTEM_PROMPT = (PROMPTS_DIR / "testcase_system.txt").read_text(encoding="utf-8")
 USER_PROMPT_TEMPLATE = (PROMPTS_DIR / "testcase_user.txt").read_text(encoding="utf-8")
 
+# Node 1: read requirements and push to state
 def read_requirements(state: TestCaseState) -> TestCaseState:
     """Read requirements text into state."""
-    req_path = pick_requirement(None, REQ_DIR)
+    # Use CLI-provided path if available
+    if "requirement_path" in state:
+        req_path = Path(state["requirement_path"])
+    else:
+        req_path = pick_requirement(None, REQ_DIR)    
+    
     logger.info(f"📄 Reading requirements from {req_path.name}")
     state["requirements"] = req_path.read_text(encoding="utf-8").strip()
     return state
 
-
+# Node 2: generate tests with llm, push to state
 def generate_tests_with_llm(state: TestCaseState) -> TestCaseState:
     """Generate test cases using LLM."""
     logger.info("🤖 Generating test cases with LLM...")
@@ -80,7 +87,7 @@ def generate_tests_with_llm(state: TestCaseState) -> TestCaseState:
     state["tests"] = [c.get("title", "Untitled Test") for c in cases]
     return state
 
-
+# Node 3: push testcases to testrail
 def push_to_testrail(state: TestCaseState) -> TestCaseState:
     """Push generated test cases into TestRail."""
     logger.info("📤 Pushing test cases to TestRail...")
