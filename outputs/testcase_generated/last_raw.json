@@ -15,37 +15,44 @@
   },
   {
     "id": "TC-003",
-    "title": "Book a flight",
-    "steps": ["Select a flight", "Choose a seat", "Enter passenger details", "Enter payment information", "Click confirm booking"],
-    "expected": "Payment is processed and booking confirmation is displayed",
-    "priority": "High"
-  },
-  {
-    "id": "TC-004",
-    "title": "Payment failure handling",
-    "steps": ["Select a flight", "Choose a seat", "Enter passenger details", "Enter invalid payment information", "Click confirm booking"],
-    "expected": "Error message is displayed and option to retry payment is available",
+    "title": "Select seats during booking",
+    "steps": ["Choose a flight", "Select seat", "Click continue"],
+    "expected": "Payment page is displayed",
     "priority": "Medium"
   },
   {
+    "id": "TC-004",
+    "title": "Process payment with credit card",
+    "steps": ["Select flight and seat", "Enter credit card details", "Click pay"],
+    "expected": "Payment is processed successfully and confirmation email is sent",
+    "priority": "High"
+  },
+  {
     "id": "TC-005",
-    "title": "Successful payment confirmation",
-    "steps": ["Select a flight", "Choose a seat", "Enter passenger details", "Enter valid payment information", "Click confirm booking"],
-    "expected": "Booking confirmation email is sent to the user",
+    "title": "Handle payment failure",
+    "steps": ["Select flight and seat", "Enter invalid payment details", "Click pay"],
+    "expected": "Error message is displayed and option to retry is available",
     "priority": "High"
   },
   {
     "id": "TC-006",
-    "title": "Display flight details",
-    "steps": ["Search for flights", "Select a flight"],
-    "expected": "Flight details including price and seat class are displayed",
+    "title": "Process payment with debit card",
+    "steps": ["Select flight and seat", "Enter debit card details", "Click pay"],
+    "expected": "Payment is processed successfully and confirmation email is sent",
     "priority": "Medium"
   },
   {
     "id": "TC-007",
-    "title": "Retry payment after failure",
-    "steps": ["Select a flight", "Choose a seat", "Enter passenger details", "Enter invalid payment information", "Click confirm booking", "Enter valid payment information", "Click confirm booking"],
-    "expected": "Payment is processed successfully and booking confirmation is displayed",
+    "title": "Process payment with digital wallet",
+    "steps": ["Select flight and seat", "Choose digital wallet option", "Click pay"],
+    "expected": "Payment is processed successfully and confirmation email is sent",
     "priority": "Medium"
+  },
+  {
+    "id": "TC-008",
+    "title": "Verify booking confirmation email",
+    "steps": ["Complete payment", "Check email inbox"],
+    "expected": "Booking confirmation email is received",
+    "priority": "Low"
   }
 ]

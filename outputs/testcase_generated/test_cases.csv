@@ -1,8 +1,9 @@
 TestID,Title,Steps,Expected,Priority
 TC-001,Search for flights,Open flight booking system | Enter source | Enter destination | Select date | Click search,Available flights are displayed with prices and seat classes,High
 TC-002,Select a flight,Search for flights | Choose a flight from the list | Select seat class | Click book,Seat selection page is displayed,High
-TC-003,Book a flight,Select a flight | Choose a seat | Enter passenger details | Enter payment information | Click confirm booking,Payment is processed and booking confirmation is displayed,High
-TC-004,Payment failure handling,Select a flight | Choose a seat | Enter passenger details | Enter invalid payment information | Click confirm booking,Error message is displayed and option to retry payment is available,Medium
-TC-005,Successful payment confirmation,Select a flight | Choose a seat | Enter passenger details | Enter valid payment information | Click confirm booking,Booking confirmation email is sent to the user,High
-TC-006,Display flight details,Search for flights | Select a flight,Flight details including price and seat class are displayed,Medium
-TC-007,Retry payment after failure,Select a flight | Choose a seat | Enter passenger details | Enter invalid payment information | Click confirm booking | Enter valid payment information | Click confirm booking,Payment is processed successfully and booking confirmation is displayed,Medium
+TC-003,Select seats during booking,Choose a flight | Select seat | Click continue,Payment page is displayed,Medium
+TC-004,Process payment with credit card,Select flight and seat | Enter credit card details | Click pay,Payment is processed successfully and confirmation email is sent,High
+TC-005,Handle payment failure,Select flight and seat | Enter invalid payment details | Click pay,Error message is displayed and option to retry is available,High
+TC-006,Process payment with debit card,Select flight and seat | Enter debit card details | Click pay,Payment is processed successfully and confirmation email is sent,Medium
+TC-007,Process payment with digital wallet,Select flight and seat | Choose digital wallet option | Click pay,Payment is processed successfully and confirmation email is sent,Medium
+TC-008,Verify booking confirmation email,Complete payment | Check email inbox,Booking confirmation email is received,Low
