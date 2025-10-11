@@ -22,7 +22,7 @@
 #   7.b Type ollama run mistral:7b  (this will start the ollama server)
 #   7.c Type a sample prompt like "What is machine learning?" to check whether it is working fine.
 # 8. Now run the file (make sure ollama is running before the runnning this command)
-# python -m src.graph.drivers.run_log_analyzer_pipeline
+# python -m src.graph.drivers.run_log_analyzer_pipeline --inputs data/logs/runtime_errors.log data/logs/app_startup.log
 
 # The project contains a demo API services for Testrail, Jira and Slack
 # GO to JiraTestrailSlackAPI-ToTest folder in this project> double click start-all.bat > will start all the API services, to see

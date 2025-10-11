@@ -1,11 +1,7 @@
 # Summary
 {
-  "total_events": 10,
-  "error_rate": 0.1,
-  "top_signatures": [
-    "failed to warm cache:",
-    "starting application: qa-agent-service v1.2.0",
-    "database connection pool initialized"
-  ],
-  "short_summary": "There were 10 total events with 1 error. The error rate is 10%. Most events indicate normal operations."
+  "total_events": 0,
+  "error_rate": 0.0,
+  "top_signatures": [],
+  "short_summary": "No events were recorded. There are no errors or warnings to analyze."
 }

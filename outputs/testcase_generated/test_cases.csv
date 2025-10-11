@@ -1,9 +1,9 @@
 TestID,Title,Steps,Expected,Priority
 TC-001,Search for flights,Open flight booking system | Enter source | Enter destination | Select date | Click search,Available flights are displayed with prices and seat classes,High
 TC-002,Select a flight,Search for flights | Choose a flight from the list | Select seat class | Click book,Seat selection page is displayed,High
-TC-003,Select seats during booking,Choose a flight | Select seat | Click continue,Payment page is displayed,Medium
-TC-004,Process payment with credit card,Select flight and seat | Enter credit card details | Click pay,Payment is processed successfully and confirmation email is sent,High
-TC-005,Handle payment failure,Select flight and seat | Enter invalid payment details | Click pay,Error message is displayed and option to retry is available,High
-TC-006,Process payment with debit card,Select flight and seat | Enter debit card details | Click pay,Payment is processed successfully and confirmation email is sent,Medium
-TC-007,Process payment with digital wallet,Select flight and seat | Choose digital wallet option | Click pay,Payment is processed successfully and confirmation email is sent,Medium
-TC-008,Verify booking confirmation email,Complete payment | Check email inbox,Booking confirmation email is received,Low
+TC-003,Select a seat,Choose a flight | Select a seat from the available options | Click continue,Payment page is displayed,Medium
+TC-004,Process payment,Enter payment details | Select payment method | Click pay,Payment is processed successfully,High
+TC-005,Handle payment failure,Enter invalid payment details | Click pay,Error message is displayed and option to retry is available,High
+TC-006,Receive booking confirmation,Complete payment successfully | Check email inbox,Booking confirmation email is received,Medium
+TC-007,Check flight details in booking,Complete booking | Go to booking history | Select the recent booking,Flight details are displayed correctly,Low
+TC-008,Search with no available flights,Open flight booking system | Enter source | Enter destination | Select date with no flights | Click search,No flights available message is displayed,Medium

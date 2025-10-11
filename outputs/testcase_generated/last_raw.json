@@ -15,44 +15,44 @@
   },
   {
     "id": "TC-003",
-    "title": "Select seats during booking",
-    "steps": ["Choose a flight", "Select seat", "Click continue"],
+    "title": "Select a seat",
+    "steps": ["Choose a flight", "Select a seat from the available options", "Click continue"],
     "expected": "Payment page is displayed",
     "priority": "Medium"
   },
   {
     "id": "TC-004",
-    "title": "Process payment with credit card",
-    "steps": ["Select flight and seat", "Enter credit card details", "Click pay"],
-    "expected": "Payment is processed successfully and confirmation email is sent",
+    "title": "Process payment",
+    "steps": ["Enter payment details", "Select payment method", "Click pay"],
+    "expected": "Payment is processed successfully",
     "priority": "High"
   },
   {
     "id": "TC-005",
     "title": "Handle payment failure",
-    "steps": ["Select flight and seat", "Enter invalid payment details", "Click pay"],
+    "steps": ["Enter invalid payment details", "Click pay"],
     "expected": "Error message is displayed and option to retry is available",
     "priority": "High"
   },
   {
     "id": "TC-006",
-    "title": "Process payment with debit card",
-    "steps": ["Select flight and seat", "Enter debit card details", "Click pay"],
-    "expected": "Payment is processed successfully and confirmation email is sent",
+    "title": "Receive booking confirmation",
+    "steps": ["Complete payment successfully", "Check email inbox"],
+    "expected": "Booking confirmation email is received",
     "priority": "Medium"
   },
   {
     "id": "TC-007",
-    "title": "Process payment with digital wallet",
-    "steps": ["Select flight and seat", "Choose digital wallet option", "Click pay"],
-    "expected": "Payment is processed successfully and confirmation email is sent",
-    "priority": "Medium"
+    "title": "Check flight details in booking",
+    "steps": ["Complete booking", "Go to booking history", "Select the recent booking"],
+    "expected": "Flight details are displayed correctly",
+    "priority": "Low"
   },
   {
     "id": "TC-008",
-    "title": "Verify booking confirmation email",
-    "steps": ["Complete payment", "Check email inbox"],
-    "expected": "Booking confirmation email is received",
-    "priority": "Low"
+    "title": "Search with no available flights",
+    "steps": ["Open flight booking system", "Enter source", "Enter destination", "Select date with no flights", "Click search"],
+    "expected": "No flights available message is displayed",
+    "priority": "Medium"
   }
 ]
