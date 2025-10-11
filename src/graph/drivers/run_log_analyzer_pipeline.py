@@ -54,8 +54,7 @@ logging.basicConfig(level=logging.INFO, format="🔹 %(message)s")
 logger = logging.getLogger(__name__)
 
 
-def main():
-    print('hi')
+def main():    
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--inputs",
