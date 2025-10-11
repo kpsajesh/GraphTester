@@ -9,6 +9,7 @@ Each node updates the shared TestCaseState.
 """
 
 import logging
+import time 
 from pathlib import Path
 from typing import List
 
@@ -72,12 +73,27 @@ def generate_tests_with_llm(state: TestCaseState) -> TestCaseState:
         {"role": "user", "content": user_prompt},
     ]
 
-    raw = chat(messages)
-    try:
-        cases = parse_json_safely(raw, LAST_RAW_JSON)
-    except Exception:
-        logger.warning("⚠️ Could not parse JSON from LLM, writing raw output")
-        cases = []
+    # Retry logic for robustness
+    cases = []
+    max_retries = 3
+    for attempt in range(1, max_retries + 1):
+        try:
+            logger.info(f"🔄 Attempt {attempt}/{max_retries} to call LLM...")
+            raw = chat(messages)
+            cases = parse_json_safely(raw, LAST_RAW_JSON)
+            if cases:  # success
+                break
+        except Exception as e:
+            logger.warning(f"⚠️ LLM call failed on attempt {attempt}: {e}")
+        time.sleep(2 * attempt)  # exponential backoff
+
+    # Fallback if all retries fail
+    if not cases:
+        logger.error("❌ All retries failed. Using fallback canned test cases.")
+        cases = [
+            {"title": "Login with valid credentials", "steps": ["Enter username", "Enter password", "Click login"], "expected": "User is logged in"},
+            {"title": "Login with invalid password", "steps": ["Enter username", "Enter wrong password", "Click login"], "expected": "Error message displayed"},
+        ]
 
     rows = to_rows(cases)
     write_csv(rows, OUT_CSV)

@@ -1,9 +1,55 @@
 {
-  "groups": [],
+  "groups": [
+    {
+      "signature": "worker-7 processing job job_id=8a3f2b",
+      "count": 1,
+      "levels": {
+        "INFO": 1,
+        "WARN": 0,
+        "ERROR": 0
+      },
+      "examples": [
+        "2025-08-20 09:12:11 [INFO]  Worker-7 processing job job_id=8a3f2b"
+      ],
+      "probable_root_cause": "Normal job processing.",
+      "recommendation": "Monitor job processing for performance metrics."
+    },
+    {
+      "signature": "payment processing failed: paymentgatewayerror:",
+      "count": 1,
+      "levels": {
+        "INFO": 0,
+        "WARN": 0,
+        "ERROR": 1
+      },
+      "examples": [
+        "2025-08-20 09:12:13 [ERROR] Payment processing failed: PaymentGatewayError: Declined card - code 402"
+      ],
+      "probable_root_cause": "Declined payment due to gateway error.",
+      "recommendation": "Investigate payment gateway settings and user card validity."
+    },
+    {
+      "signature": "timeout while calling /api/external/notify",
+      "count": 1,
+      "levels": {
+        "INFO": 0,
+        "WARN": 0,
+        "ERROR": 1
+      },
+      "examples": [
+        "2025-08-20 09:14:03 [ERROR] Timeout while calling /api/external/notify (30000ms)"
+      ],
+      "probable_root_cause": "External API did not respond in time.",
+      "recommendation": "Check external API status and increase timeout if necessary."
+    }
+  ],
   "summary": {
-    "total_events": 0,
-    "error_rate": 0.0,
-    "top_signatures": [],
-    "short_summary": "No events were recorded. There are no errors or warnings to analyze."
+    "total_events": 10,
+    "error_rate": 0.3,
+    "top_signatures": [
+      "payment processing failed: paymentgatewayerror:",
+      "timeout while calling /api/external/notify"
+    ],
+    "short_summary": "There were 10 total events with 3 errors, resulting in a 30% error rate. Payment processing and API timeouts are key issues."
   }
 }
