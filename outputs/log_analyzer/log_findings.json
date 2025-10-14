@@ -12,7 +12,7 @@
         "2025-08-20 09:12:11 [INFO]  Worker-7 processing job job_id=8a3f2b"
       ],
       "probable_root_cause": "Normal job processing.",
-      "recommendation": "Monitor job processing for performance metrics."
+      "recommendation": "No action needed; job processed successfully."
     },
     {
       "signature": "payment processing failed: paymentgatewayerror:",
@@ -25,8 +25,8 @@
       "examples": [
         "2025-08-20 09:12:13 [ERROR] Payment processing failed: PaymentGatewayError: Declined card - code 402"
       ],
-      "probable_root_cause": "Declined payment due to gateway error.",
-      "recommendation": "Investigate payment gateway settings and user card validity."
+      "probable_root_cause": "Declined payment due to card issues.",
+      "recommendation": "Investigate payment gateway settings and user card details."
     },
     {
       "signature": "timeout while calling /api/external/notify",
@@ -40,7 +40,7 @@
         "2025-08-20 09:14:03 [ERROR] Timeout while calling /api/external/notify (30000ms)"
       ],
       "probable_root_cause": "External API did not respond in time.",
-      "recommendation": "Check external API status and increase timeout if necessary."
+      "recommendation": "Check the external API status and increase timeout if necessary."
     }
   ],
   "summary": {
@@ -50,6 +50,6 @@
       "payment processing failed: paymentgatewayerror:",
       "timeout while calling /api/external/notify"
     ],
-    "short_summary": "There were 10 total events with 3 errors, resulting in a 30% error rate. Payment processing and API timeouts are key issues."
+    "short_summary": "There were 10 total events with 3 errors. The error rate is 30%. Payment processing and API timeout issues were noted."
   }
 }

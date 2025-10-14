@@ -1,8 +1,8 @@
 TestID,Title,Steps,Expected,Priority
-TC-001,Search for flights,Open flight booking system | Enter source | Enter destination | Select date | Click search,Available flights are displayed with prices and seat classes,High
-TC-002,Select a flight,Search for flights | Choose a flight from the list | Select seat class | Click book,Seat selection page is displayed,High
-TC-003,Book a flight,Select a flight | Choose a seat | Enter passenger details | Enter payment information | Click confirm booking,Payment is processed and booking confirmation is displayed,High
-TC-004,Payment failure handling,Select a flight | Choose a seat | Enter passenger details | Enter invalid payment information | Click confirm booking,Error message is displayed and option to retry payment is available,Medium
-TC-005,Successful payment confirmation,Select a flight | Choose a seat | Enter passenger details | Enter valid payment information | Click confirm booking,Booking confirmation email is sent to the user,High
-TC-006,Display flight details,Search for flights | Select a flight,Flight details including price and seat class are displayed,Medium
-TC-007,Retry payment after failure,Select a flight | Choose a seat | Enter passenger details | Enter invalid payment information | Click confirm booking | Enter valid payment information | Click confirm booking,Payment is processed successfully and booking confirmation is displayed,Medium
+TC-001,Successful login with valid credentials,Navigate to login page | Enter valid email | Enter valid password | Click login button,User is redirected to dashboard,High
+TC-002,Login with incorrect password,Navigate to login page | Enter valid email | Enter invalid password | Click login button,Error message for invalid credentials is displayed,High
+TC-003,Account lock after 3 failed login attempts,Navigate to login page | Enter valid email | Enter invalid password | Click login button | Repeat invalid password entry two more times,Account is locked for 10 minutes,Medium
+TC-004,Reset password via 'Forgot Password' link,Navigate to login page | Click 'Forgot Password' link | Enter registered email | Submit reset request,Password reset instructions are sent to the email,Medium
+TC-005,Error message for empty email field,Navigate to login page | Leave email field empty | Enter valid password | Click login button,Error message for empty email is displayed,Low
+TC-006,Error message for empty password field,Navigate to login page | Enter valid email | Leave password field empty | Click login button,Error message for empty password is displayed,Low
+TC-007,Error message for invalid email format,Navigate to login page | Enter invalid email format | Enter valid password | Click login button,Error message for invalid email format is displayed,Medium

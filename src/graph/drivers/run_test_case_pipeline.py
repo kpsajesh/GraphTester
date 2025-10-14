@@ -67,9 +67,19 @@ def main():
 
     # Initialize empty state (requirements will be filled by first node)
     init_state: TestCaseState = {}
+    if args.input:
+        init_state["requirement_path"] = args.input
 
     # Run pipeline
-    final_state = app.invoke(init_state)
+    #final_state = app.invoke(init_state)
+    
+    # Run pipeline with HITL
+    final_state = app.invoke(
+    init_state,
+    config={"configurable": {"thread_id": "testcase-run-1"}}) # Passing a thread id to identify the HITL thread to resume from
+
+    num_tests = len(final_state.get("tests", []))
+    num_ids = len(final_state.get("testrail_case_ids", []))
 
     # Pretty print results for teaching clarity
     logger.info("✅ Pipeline finished. Final state below:")

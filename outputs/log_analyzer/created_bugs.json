@@ -2,5 +2,7 @@
   "2025-09-19|failed to warm cache": "QA-2",
   "2025-10-11|failed to warm cache:": "QA-1",
   "2025-10-11|payment processing failed: paymentgatewayerror:": "QA-2",
-  "2025-10-11|timeout while calling /api/external/notify": "QA-3"
+  "2025-10-11|timeout while calling /api/external/notify": "QA-3",
+  "2025-10-14|payment processing failed: paymentgatewayerror:": "QA-1",
+  "2025-10-14|timeout while calling /api/external/notify": "QA-2"
 }

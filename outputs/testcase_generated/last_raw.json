@@ -1,51 +1,51 @@
 [
   {
     "id": "TC-001",
-    "title": "Search for flights",
-    "steps": ["Open flight booking system", "Enter source", "Enter destination", "Select date", "Click search"],
-    "expected": "Available flights are displayed with prices and seat classes",
+    "title": "Successful login with valid credentials",
+    "steps": ["Navigate to login page", "Enter valid email", "Enter valid password", "Click login button"],
+    "expected": "User is redirected to dashboard",
     "priority": "High"
   },
   {
     "id": "TC-002",
-    "title": "Select a flight",
-    "steps": ["Search for flights", "Choose a flight from the list", "Select seat class", "Click book"],
-    "expected": "Seat selection page is displayed",
+    "title": "Login with incorrect password",
+    "steps": ["Navigate to login page", "Enter valid email", "Enter invalid password", "Click login button"],
+    "expected": "Error message for invalid credentials is displayed",
     "priority": "High"
   },
   {
     "id": "TC-003",
-    "title": "Book a flight",
-    "steps": ["Select a flight", "Choose a seat", "Enter passenger details", "Enter payment information", "Click confirm booking"],
-    "expected": "Payment is processed and booking confirmation is displayed",
-    "priority": "High"
+    "title": "Account lock after 3 failed login attempts",
+    "steps": ["Navigate to login page", "Enter valid email", "Enter invalid password", "Click login button", "Repeat invalid password entry two more times"],
+    "expected": "Account is locked for 10 minutes",
+    "priority": "Medium"
   },
   {
     "id": "TC-004",
-    "title": "Payment failure handling",
-    "steps": ["Select a flight", "Choose a seat", "Enter passenger details", "Enter invalid payment information", "Click confirm booking"],
-    "expected": "Error message is displayed and option to retry payment is available",
+    "title": "Reset password via 'Forgot Password' link",
+    "steps": ["Navigate to login page", "Click 'Forgot Password' link", "Enter registered email", "Submit reset request"],
+    "expected": "Password reset instructions are sent to the email",
     "priority": "Medium"
   },
   {
     "id": "TC-005",
-    "title": "Successful payment confirmation",
-    "steps": ["Select a flight", "Choose a seat", "Enter passenger details", "Enter valid payment information", "Click confirm booking"],
-    "expected": "Booking confirmation email is sent to the user",
-    "priority": "High"
+    "title": "Error message for empty email field",
+    "steps": ["Navigate to login page", "Leave email field empty", "Enter valid password", "Click login button"],
+    "expected": "Error message for empty email is displayed",
+    "priority": "Low"
   },
   {
     "id": "TC-006",
-    "title": "Display flight details",
-    "steps": ["Search for flights", "Select a flight"],
-    "expected": "Flight details including price and seat class are displayed",
-    "priority": "Medium"
+    "title": "Error message for empty password field",
+    "steps": ["Navigate to login page", "Enter valid email", "Leave password field empty", "Click login button"],
+    "expected": "Error message for empty password is displayed",
+    "priority": "Low"
   },
   {
     "id": "TC-007",
-    "title": "Retry payment after failure",
-    "steps": ["Select a flight", "Choose a seat", "Enter passenger details", "Enter invalid payment information", "Click confirm booking", "Enter valid payment information", "Click confirm booking"],
-    "expected": "Payment is processed successfully and booking confirmation is displayed",
+    "title": "Error message for invalid email format",
+    "steps": ["Navigate to login page", "Enter invalid email format", "Enter valid password", "Click login button"],
+    "expected": "Error message for invalid email format is displayed",
     "priority": "Medium"
   }
 ]
